@@ -10,12 +10,14 @@
 		D8AF93BD28A0ED4C0021A4D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93BC28A0ED4C0021A4D1 /* AppDelegate.swift */; };
 		D8AF93BF28A0ED4C0021A4D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93BE28A0ED4C0021A4D1 /* SceneDelegate.swift */; };
 		D8AF93C128A0ED4C0021A4D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93C028A0ED4C0021A4D1 /* ViewController.swift */; };
-		D8AF93C428A0ED4C0021A4D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8AF93C228A0ED4C0021A4D1 /* Main.storyboard */; };
 		D8AF93C628A0ED4D0021A4D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8AF93C528A0ED4D0021A4D1 /* Assets.xcassets */; };
 		D8AF93C928A0ED4D0021A4D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8AF93C728A0ED4D0021A4D1 /* LaunchScreen.storyboard */; };
 		D8AF93D428A0ED4D0021A4D1 /* BookReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93D328A0ED4D0021A4D1 /* BookReviewTests.swift */; };
 		D8AF93DE28A0ED4D0021A4D1 /* BookReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93DD28A0ED4D0021A4D1 /* BookReviewUITests.swift */; };
 		D8AF93E028A0ED4D0021A4D1 /* BookReviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93DF28A0ED4D0021A4D1 /* BookReviewUITestsLaunchTests.swift */; };
+		D8AF93EE28A0EDD30021A4D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D8AF93ED28A0EDD30021A4D1 /* SnapKit */; };
+		D8AF93F128A0EDDE0021A4D1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D8AF93F028A0EDDE0021A4D1 /* Alamofire */; };
+		D8AF93F428A0EDEA0021A4D1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D8AF93F328A0EDEA0021A4D1 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,6 @@
 		D8AF93BC28A0ED4C0021A4D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8AF93BE28A0ED4C0021A4D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8AF93C028A0ED4C0021A4D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D8AF93C328A0ED4C0021A4D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8AF93C528A0ED4D0021A4D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8AF93C828A0ED4D0021A4D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8AF93CA28A0ED4D0021A4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8AF93F428A0EDEA0021A4D1 /* Kingfisher in Frameworks */,
+				D8AF93EE28A0EDD30021A4D1 /* SnapKit in Frameworks */,
+				D8AF93F128A0EDDE0021A4D1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +106,6 @@
 				D8AF93BC28A0ED4C0021A4D1 /* AppDelegate.swift */,
 				D8AF93BE28A0ED4C0021A4D1 /* SceneDelegate.swift */,
 				D8AF93C028A0ED4C0021A4D1 /* ViewController.swift */,
-				D8AF93C228A0ED4C0021A4D1 /* Main.storyboard */,
 				D8AF93C528A0ED4D0021A4D1 /* Assets.xcassets */,
 				D8AF93C728A0ED4D0021A4D1 /* LaunchScreen.storyboard */,
 				D8AF93CA28A0ED4D0021A4D1 /* Info.plist */,
@@ -143,6 +146,11 @@
 			dependencies = (
 			);
 			name = BookReview;
+			packageProductDependencies = (
+				D8AF93ED28A0EDD30021A4D1 /* SnapKit */,
+				D8AF93F028A0EDDE0021A4D1 /* Alamofire */,
+				D8AF93F328A0EDEA0021A4D1 /* Kingfisher */,
+			);
 			productName = BookReview;
 			productReference = D8AF93B928A0ED4C0021A4D1 /* BookReview.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,11 @@
 				Base,
 			);
 			mainGroup = D8AF93B028A0ED4B0021A4D1;
+			packageReferences = (
+				D8AF93EC28A0EDD30021A4D1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D8AF93EF28A0EDDE0021A4D1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D8AF93F228A0EDEA0021A4D1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D8AF93BA28A0ED4C0021A4D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +246,6 @@
 			files = (
 				D8AF93C928A0ED4D0021A4D1 /* LaunchScreen.storyboard in Resources */,
 				D8AF93C628A0ED4D0021A4D1 /* Assets.xcassets in Resources */,
-				D8AF93C428A0ED4C0021A4D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +309,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D8AF93C228A0ED4C0021A4D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D8AF93C328A0ED4C0021A4D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D8AF93C728A0ED4D0021A4D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,7 +445,6 @@
 				INFOPLIST_FILE = BookReview/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +471,6 @@
 				INFOPLIST_FILE = BookReview/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,6 +598,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D8AF93EC28A0EDD30021A4D1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		D8AF93EF28A0EDDE0021A4D1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D8AF93F228A0EDEA0021A4D1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D8AF93ED28A0EDD30021A4D1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8AF93EC28A0EDD30021A4D1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D8AF93F028A0EDDE0021A4D1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8AF93EF28A0EDDE0021A4D1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D8AF93F328A0EDEA0021A4D1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8AF93F228A0EDEA0021A4D1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8AF93B128A0ED4B0021A4D1 /* Project object */;
 }
