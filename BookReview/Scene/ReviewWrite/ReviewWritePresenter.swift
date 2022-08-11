@@ -12,6 +12,8 @@ protocol ReviewWriteProtocol {
   func showCloseAlertController()
   func close()
   func setupViews()
+  func presntToSearchBookViewController()
+  func updateViews(title: String, imagUrl: URL?)
 }
 
 final class ReviewWritePresenter: NSObject {
@@ -33,5 +35,17 @@ final class ReviewWritePresenter: NSObject {
   
   func didTapRightBarButton() {
     viewController.close()
+  }
+  
+  func didTapBookTitleButton() {
+    viewController.presntToSearchBookViewController()
+  }
+}
+
+
+extension ReviewWritePresenter: SearchBookDelegate {
+  func didSelectBook(_ book: Book) {
+    viewController.updateViews(title: book.title,
+                               imagUrl: book.imageURL)
   }
 }

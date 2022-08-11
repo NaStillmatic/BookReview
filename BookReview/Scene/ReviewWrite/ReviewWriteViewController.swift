@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class ReviewWriteViewController: UIViewController {
   
@@ -18,7 +19,7 @@ final class ReviewWriteViewController: UIViewController {
     button.setTitleColor(.tertiaryLabel, for: .normal)
     button.contentHorizontalAlignment = .left
     button.titleLabel?.font = .systemFont(ofSize: 23.0, weight: .bold)
-    //    button.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+    button.addTarget(self, action: #selector(didTapBookTitleButton), for: .touchUpInside)
     return button
   }()
   
@@ -106,6 +107,17 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
       $0.bottom.equalTo(view.safeAreaLayoutGuide)
     }
   }
+  
+  func presntToSearchBookViewController() {          
+    let vc = UINavigationController(rootViewController: SearchBookViewController(searchBookDelegate: presenter))
+    present(vc, animated: true)
+  }
+  
+  func updateViews(title: String, imagUrl: URL?) {
+    bookTitleButton.setTitle(title, for: .normal)
+    bookTitleButton.setTitleColor(.black, for: .normal)
+    imageView.kf.setImage(with: imagUrl)
+  }  
 }
 
 private extension ReviewWriteViewController {
@@ -115,6 +127,10 @@ private extension ReviewWriteViewController {
   
   @objc func didTapRightBarButton() {
     presenter.didTapRightBarButton()
+  }
+  
+  @objc func didTapBookTitleButton() {
+    presenter.didTapBookTitleButton()
   }
 }
 
