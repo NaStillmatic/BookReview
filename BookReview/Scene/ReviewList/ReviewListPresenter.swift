@@ -17,12 +17,15 @@ protocol ReviewListPorotocol {
 
 final class ReviewListPresenter: NSObject {
   private let viewController: ReviewListPorotocol
-  private let userDefaultmanager = UserDefaultsManager()
+  private let userDefaultsmanager: UserDefaultsManagerProtocol
   
   private var review: [BookReview] = []
   
-  init(viewController: ReviewListPorotocol) {
-    self.viewController = viewController    
+  init(viewController: ReviewListPorotocol,
+       userDefaultsmanager: UserDefaultsManagerProtocol = UserDefaultsManager()) {
+    self.viewController = viewController
+    self.userDefaultsmanager = userDefaultsmanager
+         
     viewController.setupNavigationBar()
   }
   
@@ -32,7 +35,7 @@ final class ReviewListPresenter: NSObject {
   }
   
   func viewWillAppear() {
-    review = userDefaultmanager.getReview()
+    review = userDefaultsmanager.getReview()
     viewController.reloadTableView()
   }
 

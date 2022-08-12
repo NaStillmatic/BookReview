@@ -12,7 +12,7 @@
 		D8AF93C128A0ED4C0021A4D1 /* ReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93C028A0ED4C0021A4D1 /* ReviewListViewController.swift */; };
 		D8AF93C628A0ED4D0021A4D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8AF93C528A0ED4D0021A4D1 /* Assets.xcassets */; };
 		D8AF93C928A0ED4D0021A4D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8AF93C728A0ED4D0021A4D1 /* LaunchScreen.storyboard */; };
-		D8AF93D428A0ED4D0021A4D1 /* BookReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93D328A0ED4D0021A4D1 /* BookReviewTests.swift */; };
+		D8AF93D428A0ED4D0021A4D1 /* ReviewListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93D328A0ED4D0021A4D1 /* ReviewListPresenterTests.swift */; };
 		D8AF93DE28A0ED4D0021A4D1 /* BookReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93DD28A0ED4D0021A4D1 /* BookReviewUITests.swift */; };
 		D8AF93E028A0ED4D0021A4D1 /* BookReviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF93DF28A0ED4D0021A4D1 /* BookReviewUITestsLaunchTests.swift */; };
 		D8AF93EE28A0EDD30021A4D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D8AF93ED28A0EDD30021A4D1 /* SnapKit */; };
@@ -29,6 +29,8 @@
 		D8AF940B28A110300021A4D1 /* BookSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF940A28A110300021A4D1 /* BookSearchManager.swift */; };
 		D8AF940E28A64C760021A4D1 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF940D28A64C760021A4D1 /* UserDefaultsManager.swift */; };
 		D8AF941028A64C820021A4D1 /* BookReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF940F28A64C820021A4D1 /* BookReview.swift */; };
+		D8AF941228A65D880021A4D1 /* MockReviewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF941128A65D880021A4D1 /* MockReviewListViewController.swift */; };
+		D8AF941428A65E040021A4D1 /* MockUserDefaultsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF941328A65E040021A4D1 /* MockUserDefaultsManagerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,7 @@
 		D8AF93C828A0ED4D0021A4D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8AF93CA28A0ED4D0021A4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8AF93CF28A0ED4D0021A4D1 /* BookReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8AF93D328A0ED4D0021A4D1 /* BookReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewTests.swift; sourceTree = "<group>"; };
+		D8AF93D328A0ED4D0021A4D1 /* ReviewListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListPresenterTests.swift; sourceTree = "<group>"; };
 		D8AF93D928A0ED4D0021A4D1 /* BookReviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8AF93DD28A0ED4D0021A4D1 /* BookReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITests.swift; sourceTree = "<group>"; };
 		D8AF93DF28A0ED4D0021A4D1 /* BookReviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		D8AF940A28A110300021A4D1 /* BookSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchManager.swift; sourceTree = "<group>"; };
 		D8AF940D28A64C760021A4D1 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D8AF940F28A64C820021A4D1 /* BookReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReview.swift; sourceTree = "<group>"; };
+		D8AF941128A65D880021A4D1 /* MockReviewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockReviewListViewController.swift; sourceTree = "<group>"; };
+		D8AF941328A65E040021A4D1 /* MockUserDefaultsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsManagerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +144,8 @@
 		D8AF93D228A0ED4D0021A4D1 /* BookReviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8AF93D328A0ED4D0021A4D1 /* BookReviewTests.swift */,
+				D8AF941628A65E3A0021A4D1 /* Tests */,
+				D8AF941528A65E300021A4D1 /* Mock */,
 			);
 			path = BookReviewTests;
 			sourceTree = "<group>";
@@ -209,6 +214,23 @@
 				D8AF940D28A64C760021A4D1 /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		D8AF941528A65E300021A4D1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D8AF941328A65E040021A4D1 /* MockUserDefaultsManagerProtocol.swift */,
+				D8AF941128A65D880021A4D1 /* MockReviewListViewController.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		D8AF941628A65E3A0021A4D1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D8AF93D328A0ED4D0021A4D1 /* ReviewListPresenterTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,7 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8AF93D428A0ED4D0021A4D1 /* BookReviewTests.swift in Sources */,
+				D8AF941428A65E040021A4D1 /* MockUserDefaultsManagerProtocol.swift in Sources */,
+				D8AF941228A65D880021A4D1 /* MockReviewListViewController.swift in Sources */,
+				D8AF93D428A0ED4D0021A4D1 /* ReviewListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
