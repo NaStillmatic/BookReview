@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol ReviewListPorotocol {
   func setupNavigationBar()
@@ -16,6 +17,9 @@ protocol ReviewListPorotocol {
 
 final class ReviewListPresenter: NSObject {
   private let viewController: ReviewListPorotocol
+  private let userDefaultmanager = UserDefaultsManager()
+  
+  private var review: [BookReview] = []
   
   init(viewController: ReviewListPorotocol) {
     self.viewController = viewController    
@@ -28,6 +32,7 @@ final class ReviewListPresenter: NSObject {
   }
   
   func viewWillAppear() {
+    review = userDefaultmanager.getReview()
     viewController.reloadTableView()
   }
 
@@ -39,13 +44,19 @@ final class ReviewListPresenter: NSObject {
 extension ReviewListPresenter: UITableViewDataSource {
     
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return review.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-    cell.textLabel?.text = "\(indexPath.row)"
+    let data = review[indexPath.row]
+    cell.textLabel?.text = data.title
+    cell.detailTextLabel?.text = data.contents
+    cell.imageView?.kf.setImage(with: data.imageURL,
+                                placeholder: .none) { _ in
+      cell.setNeedsLayout()
+    }
     return cell
   }
   

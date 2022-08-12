@@ -19,6 +19,10 @@ protocol ReviewWriteProtocol {
 final class ReviewWritePresenter: NSObject {
   
   private let viewController: ReviewWriteProtocol
+  private let userDefaultManger = UserDefaultsManager()
+  private var book: Book?
+  
+  let contentsTextViewPlaceHodler = "내용을 입력해주세요."
   
   init(viewController: ReviewWriteProtocol) {
     self.viewController = viewController
@@ -33,7 +37,13 @@ final class ReviewWritePresenter: NSObject {
     viewController.showCloseAlertController()
   }
   
-  func didTapRightBarButton() {
+  func didTapRightBarButton(contentsText: String?) {
+  
+    guard let book = book else { return }
+    let bookReview = BookReview(title: book.title,
+                                contents: contentsText ?? "",
+                                imageURL: book.imageURL)
+    userDefaultManger.setReView(bookReview)
     viewController.close()
   }
   
@@ -45,6 +55,7 @@ final class ReviewWritePresenter: NSObject {
 
 extension ReviewWritePresenter: SearchBookDelegate {
   func didSelectBook(_ book: Book) {
+    self.book = book
     viewController.updateViews(title: book.title,
                                imagUrl: book.imageURL)
   }
