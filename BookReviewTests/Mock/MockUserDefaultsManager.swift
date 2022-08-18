@@ -1,5 +1,5 @@
 //
-//  MockUserDefaultsManagerProtocol.swift
+//  MockUserDefaultsManager.swift
 //  BookReviewTests
 //
 //  Created by HwangByungJo  on 2022/08/12.
@@ -9,7 +9,7 @@ import Foundation
 
 @testable import BookReview
 
-final class MockUserDefaultsManagerProtocol: UserDefaultsManagerProtocol {
+final class MockUserDefaultsManager: UserDefaultsManagerProtocol {
   
   var isCalledGetReviews = false
   var isCalledSetReview = false

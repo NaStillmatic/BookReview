@@ -12,43 +12,47 @@ protocol ReviewWriteProtocol {
   func showCloseAlertController()
   func close()
   func setupViews()
-  func presntToSearchBookViewController()
-  func updateViews(title: String, imagUrl: URL?)
+  func presentToSearchBookViewController()
+  func updateViews(title: String, imageURL: URL?)
 }
 
 final class ReviewWritePresenter: NSObject {
   
   private let viewController: ReviewWriteProtocol
-  private let userDefaultManger = UserDefaultsManager()
-  private var book: Book?
+  private let userDefaultsManager: UserDefaultsManagerProtocol
+  var book: Book?
   
-  let contentsTextViewPlaceHodler = "내용을 입력해주세요."
+  let contentsTextViewPlaceHolderText = "내용을 입력해주세요."
   
-  init(viewController: ReviewWriteProtocol) {
+  init(viewController: ReviewWriteProtocol,
+       userDefaultsManager: UserDefaultsManagerProtocol = UserDefaultsManager()) {
     self.viewController = viewController
+    self.userDefaultsManager = userDefaultsManager
   }
   
   func viewDidLoad() {
     viewController.setupNavigationBar()
     viewController.setupViews()
   }
-    
+  
   func didTapLeftBarButton() {
     viewController.showCloseAlertController()
   }
   
   func didTapRightBarButton(contentsText: String?) {
-  
-    guard let book = book else { return }
+    
+    guard let book = book,
+          let contentsText = contentsText,
+          contentsText != contentsTextViewPlaceHolderText else { return }
     let bookReview = BookReview(title: book.title,
-                                contents: contentsText ?? "",
+                                contents: contentsText,
                                 imageURL: book.imageURL)
-    userDefaultManger.setReView(bookReview)
+    userDefaultsManager.setReView(bookReview)
     viewController.close()
   }
   
   func didTapBookTitleButton() {
-    viewController.presntToSearchBookViewController()
+    viewController.presentToSearchBookViewController()
   }
 }
 
@@ -57,6 +61,6 @@ extension ReviewWritePresenter: SearchBookDelegate {
   func didSelectBook(_ book: Book) {
     self.book = book
     viewController.updateViews(title: book.title,
-                               imagUrl: book.imageURL)
+                               imageURL: book.imageURL)
   }
 }

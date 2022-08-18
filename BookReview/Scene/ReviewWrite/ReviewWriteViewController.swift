@@ -26,7 +26,7 @@ final class ReviewWriteViewController: UIViewController {
   private lazy var contentsTextView: UITextView = {
     let textView = UITextView()
     textView.textColor = .tertiaryLabel
-    textView.text = presenter.contentsTextViewPlaceHodler
+    textView.text = presenter.contentsTextViewPlaceHolderText
     textView.font = .systemFont(ofSize: 16.0, weight: .medium)
     textView.delegate = self
     return textView
@@ -51,6 +51,7 @@ final class ReviewWriteViewController: UIViewController {
 
 extension ReviewWriteViewController: ReviewWriteProtocol {
   
+    
   func setupNavigationBar() {
     navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
                                                        target: self,
@@ -108,15 +109,15 @@ extension ReviewWriteViewController: ReviewWriteProtocol {
     }
   }
   
-  func presntToSearchBookViewController() {          
+  func presentToSearchBookViewController() {
     let vc = UINavigationController(rootViewController: SearchBookViewController(searchBookDelegate: presenter))
     present(vc, animated: true)
   }
   
-  func updateViews(title: String, imagUrl: URL?) {
+  func updateViews(title: String, imageURL: URL?) {
     bookTitleButton.setTitle(title, for: .normal)
     bookTitleButton.setTitleColor(.black, for: .normal)
-    imageView.kf.setImage(with: imagUrl)
+    imageView.kf.setImage(with: imageURL)
   }  
 }
 

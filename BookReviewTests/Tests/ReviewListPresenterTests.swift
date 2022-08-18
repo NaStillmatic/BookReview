@@ -12,16 +12,17 @@ class ReviewListPresenterTests: XCTestCase {
   
   var sut: ReviewListPresenter!
   var viewController: MockReviewListViewController!
-  var userDefaultsManager: MockUserDefaultsManagerProtocol!
+  var userDefaultsManager: MockUserDefaultsManager!
   
   override func setUp() {
     super.setUp()
     
     viewController = MockReviewListViewController()
-    userDefaultsManager = MockUserDefaultsManagerProtocol()
+    userDefaultsManager = MockUserDefaultsManager()
     sut = ReviewListPresenter(viewController: viewController,
                               userDefaultsmanager: userDefaultsManager)
   }
+  
   
   override func tearDown() {
     sut = nil
